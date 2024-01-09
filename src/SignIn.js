@@ -6,6 +6,7 @@ import { Link, Navigate } from 'react-router-dom';
 
 
 function NewUser() {
+    // State variables for user input and error handling
     const [newdata, setNewData] = useState(null);
     const [newusername, setNewUserName] = useState('');
     const [newemail, setNewEmail] = useState('');
@@ -13,7 +14,7 @@ function NewUser() {
     const [confirmpassword, setConfirmPassword] = useState('');
     const [signinError, setSigninError] = useState({});
 
-    //setSigninError({});
+    // Function to validate username
     const CheckUsername = () => {
         const userPattern = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
         if (!newusername) {
@@ -25,6 +26,7 @@ function NewUser() {
         }
     }
 
+    // Function to validate email
     const CheckEmail = () => {
         const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
         if (!newemail) {
@@ -37,6 +39,7 @@ function NewUser() {
         }
     }
 
+    // Function to validate password
     const CheckPassword = () => {
         const passwordPattern = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
         if (!newpassword) {
@@ -48,6 +51,7 @@ function NewUser() {
         }
     }
 
+    // Function to validate confirm password
     const CheckConfirmpass = () => {
         if (!confirmpassword) {
             setSigninError(prevError => ({ ...prevError, confirmpassword: 'This feild is required' }));
@@ -58,9 +62,11 @@ function NewUser() {
         }
     }
 
+    // Function to handle user registration
     const addUser = async (e) => {
         e.preventDefault();
         try {
+            // Send registration request to the backend
             const response = await axios({
                 method: 'POST',
                 baseURL: 'http://127.0.0.1:8000/register/',
@@ -71,14 +77,19 @@ function NewUser() {
                     "password2": confirmpassword
                 },
             });
+            // Set data received from the server
             setNewData(response.data);
 
+            // Check for successful registration (status code 200)
             if (response.status === 200) {
+                // Clear any previous errors on successful registration
                 setSigninError({});
             }
         }
         catch (error) {
+            // Handle errors during registration
             console.log(error)
+            // Display specific error messages based on response data
             if (error.response && error.response.data && error.response.data.username) {
                 setSigninError(prevError => ({ ...prevError, newusername: error.response.data.username }));
             }

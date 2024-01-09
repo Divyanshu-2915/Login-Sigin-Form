@@ -10,6 +10,7 @@ function WebForm() {
 
   return (
     <>
+    {/* Define routes for the application */}
       <Router>
         <Routes>
           <Route path="/">

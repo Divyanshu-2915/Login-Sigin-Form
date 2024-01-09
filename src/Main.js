@@ -9,10 +9,12 @@ function MainPage() {
 
     return (
         <>
+        {/* Main landing page with links to sign up and log in */}
             <div className="main-container">
                 <h2> WelCome</h2>
                 <h2> React Form Validation UI </h2>
 
+                {/* Link to Sign Up page */}
                 <div className="child-container">
                     <h4> New User </h4>
                     <button><Link to='./SignIn' style={{
@@ -21,6 +23,8 @@ function MainPage() {
                         background: 'transparent'
                     }}>Sign In</Link></button>
                 </div>
+
+                {/* Link to Log In page */}
                 <div className="child-container">
                     <h4>Already Registered </h4>
                     <button><Link to='./Login' style={{

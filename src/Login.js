@@ -5,13 +5,14 @@ import { Link, Navigate } from "react-router-dom";
 
 
 function LoginUser() {
+    // State variables for user input and error handling
     const [data, setData] = useState(null);
     const [username, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginError, setLoginError] = useState({}); // State for storing validation errors
-    //const [loginSuccess, setLoginSuccess] = useState(false);
 
+    // Function to validate username
     const CheckUser = () => {
         if (username === '') {
             setLoginError(prevError => ({ ...prevError, username: 'Username is required' }));
@@ -20,6 +21,7 @@ function LoginUser() {
         }
     }
 
+    // Function to validate email
     const CheckEmail = () => {
         const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
         if (email === '') {
@@ -31,6 +33,7 @@ function LoginUser() {
         }
     }
 
+    // Function to validate password
     const CheckPassword = () => {
         const passwordPattern = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
         if (!passwordPattern.test(password)) {
@@ -40,15 +43,18 @@ function LoginUser() {
         }
     }
 
+    // Function to handle user login
     const userLogin = async (e) => {
         e.preventDefault();
         try {
+            // Send login request to the backend
             const response = await axios.post('http://127.0.0.1:8000/login/', {
                 username: username,
                 email: email,
                 password: password,
             });
 
+            // Set data received from the server
             setData(response.data);
 
             // Check for successful login (status code 200)
@@ -58,6 +64,7 @@ function LoginUser() {
                 //setLoginSuccess(true);
             }
         } catch (error) {
+            // Display specific error messages based on response data
             console.error('Error during login:', error);
             if (error.response && error.response.data && error.response.data.username) {
                 setLoginError(prevError => ({ ...prevError, username: error.response.data.username }));
