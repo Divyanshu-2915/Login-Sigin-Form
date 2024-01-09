@@ -1,0 +1,56 @@
+.login-main-container {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1 {
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input {
+    width: 250px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 40%;
+}
+
+form {
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+label {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.login-btn {
+    border: 1px solid #1e1f26;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    font-size: large;
+    background: transparent;
+    margin-left: 45%;
+}
+
+.login-btn:hover {
+    font-size: larger;
+    border-bottom: 5px solid #1e1f26;
+    cursor: pointer;
+}
+
+p {
+    color: red;
+}
+
+span {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    width: 150px;
+}
