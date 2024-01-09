@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+This is a simple React application that provides user registration (sign up) and login functionality, featuring form validation on both the client and server sides.
+The application uses React for the front end and Axios for making HTTP requests to a backend server. 
+The backend server is assumed to be running at `http://127.0.0.1:8000`.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features - 
 
-## Available Scripts
+  #User Registration (Sign Up): New users can register by providing a username, email, and password. The application checks for various conditions, such as valid email format, strong       password requirements, and matching password and confirm password.
 
-In the project directory, you can run:
+  #User Login: Existing users can log in with their username, email, and password. The application performs client-side validation for each field and communicates with the backend to       authenticate the user.
 
-### `npm start`
+  #Form Validation: The application performs client-side form validation to ensure that users provide valid inputs. Error messages are displayed for each field that fails validation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  #Error Handling: The application handles errors gracefully, displaying specific error messages for different scenarios, such as invalid username, email, password, or general server-      side errors.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  #Navigation: Users can navigate between the registration and login forms using navigation links.
 
-### `npm test`
+## Project Structure - 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  #App.js: The main component that sets up the React Router for navigation between different pages.
 
-### `npm run build`
+  #Main.js: The landing page component with links to the registration and login pages.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  #SignIn.js: Component for user registration (sign up) with form validation and error handling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  #Login.js: Component for user login with form validation and error handling.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Used - 
+  React Router - for routing in React applications.
+  Axios - for making requests to the backend server.
+  useState - for managing the state of States and Messages.
+  Arrow Functions - for using useState variables in a react function without any error.
+  Regex Expression - for checking the standard format for input fields.
+  
